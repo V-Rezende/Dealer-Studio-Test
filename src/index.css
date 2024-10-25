@@ -11,3 +11,240 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/**************************************** BANNER ****************************************/
+
+.header {
+  background-image: url("/public/images/ford-ranger.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.h1-header, .p-header, .contact-button {
+  position: relative;
+  z-index: 2;
+}
+
+.h1-header {
+  font-size: 38px;
+}
+
+.p-header {
+  width: 50vw;
+  font-size: 16px;
+}
+
+.contact-button {
+  background-color: rgb(66, 111, 200);
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  width: 140px;
+  padding: 8px;
+  margin: 16PX;
+  border-radius: 25px;
+  border: none;
+}
+
+.contact-button:hover{
+  cursor:pointer
+}
+
+/**************************************** BODY CARDS ****************************************/
+
+.body-cards {
+  display: flex;
+  width: 100vw;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.carrossel {
+  display: flex;
+  justify-content:center ;
+  overflow: hidden;
+  flex-direction: row;
+  width: 100%;
+}
+
+/**************************************** CARDS ****************************************/
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  height: 50vh;
+  gap: 20px;
+}
+
+.card-one,
+.card-two,
+.card-three {
+  display:flex;
+  flex-direction: column;
+  width: 260px;
+  height: 310px;
+  overflow:hidden ;
+  border-radius: 10px;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.3);
+  /* min-width: 300px; */
+  margin: 0 10px;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.heading h2 {
+  text-align: start;
+  padding-top: 12px;
+  padding-left: 12px;
+  margin: 0;
+}
+
+.card-body p {
+  display: flex;
+  font-size: 10px;
+  color: rgb(105, 105, 105);
+  padding-top: 8px;
+  padding-left: 10px;
+  padding-right: 8px;
+  margin: 0;
+  text-align: start;
+}
+
+/**************************************** BUTTONS ****************************************/
+
+.button-place {
+  display: flex;
+  flex-direction: column;
+  align-items:center ;
+  justify-content: flex-end;
+  padding-bottom: 16px;
+  height: 100%;
+}
+
+.button {
+  background-color: rgb(66, 111, 200);
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  width: 220px;
+  padding: 6px;
+  border-radius: 25px;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+/**************************************** RESPONSIVENESS ****************************************/
+
+@media screen and (min-width:360px) and (max-width: 1100px) {
+
+  .cards {
+    width: 90%;
+  }
+
+  .button {
+    width: 170px;
+  }
+}
+
+/*---------------------------------------- MOBILE ----------------------------------------*/
+
+@media (max-width: 450px) {
+
+  .h1-header {
+    width: 80vw;
+    font-size: 30px;
+  }
+
+  .p-header {
+    width: 80vw;
+    font-size: 12px;
+  }
+
+  .contact-button {
+    font-size: 14px;
+    width: 100px;
+    padding: 6px;
+    margin: 12PX;
+  }
+
+  .body-cards {
+    height: auto;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .card-one,
+  .card-two,
+  .card-three {
+    width: 60%;
+    height: auto;
+  }
+
+  .heading h2 {
+    font-size: 20PX;
+  }
+
+  .card-body {
+    height: auto;
+    padding: 10px;
+  }
+
+  .card-body p {
+    font-size: 9px;
+  }
+
+  .button-place {
+    padding-bottom: 12px;
+  }
+
+  .button {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px;
+  }
+}

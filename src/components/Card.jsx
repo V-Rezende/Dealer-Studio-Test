@@ -65,7 +65,7 @@ const Card = () => {
           <CardHeader cardHeader="Heading 3" />
           <CardBody
             cardBody1="Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, ullam alias odio est, obcaecati itaque excepturi consequuntur velit adipisci suscipit."
-            cardBody2="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum consectetur debitis asperiores." />
+            cardBody2="Lorem ipsum dolor sit amet consectetur adipisicing elit." />
           <Button buttonName="Button 3" onClick={() => moveToCenter(2)} />
         </div>
       </div>

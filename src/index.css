@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -15,7 +16,7 @@ code {
 /**************************************** BANNER ****************************************/
 
 .header {
-  background-image: url("/public/images/ford-ranger.jpg");
+  background-image: url("/public/images/ford-ranger.jpeg");
   background-size: cover;
   background-position: center;
   height: 50vh;
@@ -116,28 +117,27 @@ code {
 
 .card-image {
   width: 100%;
-  height: auto;
 }
 
 .card-image img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: 90%;
+  object-fit: cover;
   display: block;
 }
 
 .heading h2 {
   text-align: start;
-  padding-top: 12px;
-  padding-left: 12px;
   margin: 0;
+  padding-left: 12px;
+
 }
 
 .card-body p {
   display: flex;
   font-size: 10px;
   color: rgb(105, 105, 105);
-  padding-top: 8px;
+  padding-top: 6px;
   padding-left: 10px;
   padding-right: 8px;
   margin: 0;

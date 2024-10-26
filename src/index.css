@@ -226,7 +226,8 @@ code {
   }
 
   .heading h2 {
-    font-size: 20PX;
+    font-size: 20px;
+    padding-top:10px ;
   }
 
   .card-body {

@@ -5,43 +5,40 @@ import CardHeader from './CardHeader';
 import CardImage from './CardImage';
 import Button from './Button';
 
+// Mais card component
 const Card = () => {
 
+  // State for controlling the order of the cards
   const [order, setOrder] = useState([1, 2, 3]);
 
+  // State for tracking the currently selected card
   const [selectedCard, setSelectedCard] = useState(null);
 
-    // const moveToCenter = (index) => {
-    //     setSelectedCard(index); // Update selected card
-    //     setOrder(order.map((_, i) => {
-    //         if (i === index) return 2; // Setting clicked card to the center
-    //             return i < index ? 3 : 1; //  Setting other cards to the positions 1 and 3
-    //     }));
-
-    // };
-
     const moveToCenter = (index) => {
-      // Se o card clicado já estiver na posição 2, mantenha as posições
+      // If the clicked card is already in position 2 (center), keep positions as they are
       if (order[index] === 2) return;
 
-      // Encontra o índice do card que está na posição 2
+      // Find the index of the card that is already in the center position
       const centerCardIndex = order.findIndex(pos => pos === 2);
 
-      // Atualiza as posições: coloca o card clicado na posição 2 e o card do centro na posição anterior do clicado
+      // Update positions: place the clicked card in the center position (2),
+      // and move the card in the center to the previous position of the clicked card
       setOrder(order.map((pos, i) => {
-        if (i === index) return 2;             // Card clicado vai para o centro (posição 2)
-        if (i === centerCardIndex) return order[index]; // Card do centro vai para a posição do clicado
-        return pos;                            // Mantém a posição dos outros cards
+        if (i === index) return 2;                      // Move the clicked card to the center (position 2)
+        if (i === centerCardIndex) return order[index]; // Move the center card to the position of the clicked card
+        return pos;                                     // Keep other cards in their current positions
       }));
 
-      // Atualiza o estado do card selecionado
+      // Update the selected card state to highlight the active card
       setSelectedCard(index);
     };
 
 
   return (
     <div className='carrossel'>
+
       <div className='cards'>
+
         <div className='card-one'
               style={{ order: order[0],
               border: selectedCard === 0 ? '5px solid rgb(66, 111, 200)' : 'none'}}>
@@ -50,6 +47,7 @@ const Card = () => {
           <CardBody cardBody1="Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, ullam alias odio est, obcaecati itaque excepturi consequuntur velit adipisci suscipit." />
           <Button buttonName="Button 1" onClick={() => moveToCenter(0)} />
         </div>
+
         <div className='card-two'
               style={{ order: order[1],
               border: selectedCard === 1 ? '5px solid rgb(66, 111, 200)' : 'none'}}>
@@ -58,6 +56,7 @@ const Card = () => {
           <CardBody cardBody1="Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, ullam alias odio est, obcaecati itaque excepturi consequuntur velit adipisci suscipit." />
           <Button buttonName="Button 2" onClick={() => moveToCenter(1)} />
         </div>
+
         <div className='card-three'
               style={{ order: order[2],
               border: selectedCard === 2 ? '5px solid rgb(66, 111, 200)' : 'none' }}>

@@ -1,6 +1,6 @@
 # Dealer Studio Test - React Project
 
-A clean, responsive website built with React and CSS that showcases a card layout with custom components, state management, and interactive styling.
+A clean, responsive landpage built with React and CSS that showcases a card layout with custom components, state management, and interactive styling.
 
 ## Table of Contents
 
